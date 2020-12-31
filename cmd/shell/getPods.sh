@@ -8,4 +8,4 @@
 #Como usar:
 #. getPods.sh u-billing-profile-info
 read -r np<namespace.txt
-kubectl -n $np get pods | grep $1
+kubectl get pods -A | grep $1 | grep $np
