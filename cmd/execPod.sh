@@ -1,14 +1,12 @@
 #!/bin/bash
+#Histórico de versões:
 #
-# execPod - Entra nos arquivos do pod.
+#1.0 - Heitor Bellini
 #
-# Como usar: ". execPod.sh ambiente nome-do-pod-v1" para entrar nos arquivos do pod.
+#execPod fornece acesso de root ao pod informado.
 #
-# Exemplo: 
-# 	felipe_alencar@cloudshell:~$ . execPod.sh uat3 bscsix-read-bill-sum-v1 
-#
-#
-namespace=$1
-pod=$2
-kubectl -n $1 exec -it deploy/$2 /bin/bash
+#Como usar:
+#. execPod.sh u-billing-profile-info-v1-6cf54c8584-kzrmg
+read -r np<namespace.txt
+kubectl -n $np exec -it deploy/$1 /bin/bash
 

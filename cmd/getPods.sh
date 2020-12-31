@@ -1,13 +1,11 @@
 #!/bin/bash
+#Histórico de versões:
 #
-# getPods - Retorna os pods que estão no ar em todos os ambientes.
+#1.0 - Heitor Bellini
 #
-# Como usar: ". getPods.sh nome-do-pod" para retornar os pods. Pode usar também uma parte do nome conforme os exemplos abaixo:
+#getPods recupera todos os pods que contém em seu nome o parâmetro informado na atual namespace.
 #
-# Exemplo: 
-# 	felipe_alencar@cloudshell:~$ . getPods.sh bscs bscsix-read-bill-sum-v1 
-#	felipe_alencar@cloudshell:~$ . getPods.sh bscs bscsix-read
-#
-#
-pod=$1
-kubectl get pods -A | grep $1
+#Como usar:
+#. getPods.sh u-billing-profile-info
+read -r np<namespace.txt
+kubectl -n $np get pods | grep $1

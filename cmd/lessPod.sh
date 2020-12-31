@@ -1,13 +1,11 @@
 #!/bin/bash
+#Histórico de versões:
 #
-# lessPod - Abre o pod com less
+#1.0 - Heitor Bellini
 #
-# Como usar: ". lessPod.sh ambiente nome-do-pod-v1-numero-numero" para abrir o pod com less.
+#lessPod abre o log atual do pod informado em formato 'less'.
 #
-# Exemplo: 
-# 	felipe_alencar@cloudshell:~$ . lessPod.sh uat3 bscsix-read-simcard-data-v1-6488d5bf74-mf2jh 
-#
-#
-namespace=$1
-pod=$2
-kubectl -n $1 logs -f $2 | less
+#Como usar:
+#. lessPod.sh u-billing-profile-info-v1-6cf54c8584-kzrmg
+read -r np<namespace.txt
+kubectl -n $np logs -f $1 | less

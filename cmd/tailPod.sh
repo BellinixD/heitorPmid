@@ -1,13 +1,11 @@
 #!/bin/bash
+#Histórico de versões:
 #
-# tailPod - Abre o pod com tail
+#1.0 - Heitor Bellini
 #
-# Como usar: ". tailPod.sh ambiente nome-do-pod-v1-numero-numero" para abrir o pod com tail.
+#tailPod possibilita acompanhar o log do pod informado em tempo real.
 #
-# Exemplo: 
-# 	felipe_alencar@cloudshell:~$ . tailPod.sh uat3 bscsix-read-simcard-data-v1-6488d5bf74-mf2jh 
-#
-#
-namespace=$1
-pod=$2
-kubectl -n $1 logs -f $2 
+#Como usar:
+#. tailPod.sh u-billing-profile-info-v1-6cf54c8584-kzrmg
+read -r np<namespace.txt
+kubectl -n $np logs -f $1
