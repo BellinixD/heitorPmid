@@ -9,4 +9,3 @@
 #. execPod.sh u-billing-profile-info-v1-6cf54c8584-kzrmg
 read -r np<namespace.txt
 kubectl -n $np exec -it deploy/$1 /bin/bash
-
