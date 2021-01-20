@@ -9,6 +9,4 @@
 #
 # Obs: Esse script retorna apenas o host e port do serviço. Alguns serviços podem não retornar o host e port.
 #
-namespace=$2
-pod=$1
 kubectl -n $2 describe deploy $1 | grep PROVIDER_ADDRESS
