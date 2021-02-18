@@ -29,7 +29,7 @@ then
     sleep 3's'                                                                                                 
     gcloud config set compute/region southamerica-east1       
     sleep 3's'                                                                                        
-    gcloud container clusters get-credentials tim-pmid-fqa --region=southamerica-east1
+    gcloud container clusters get-credentials tim-pmid-uat --region southamerica-east1 --project tim-pmid-fqa
     sleep 3's' 
 
 elif [ $namespace == 'prd' ]
