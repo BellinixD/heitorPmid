@@ -2,7 +2,7 @@
 #
 # checkVersion.sh - Checa a versão do serviço no ambiente.
 #
-# Como usar: ". checkVersion.sh ambiente nome-do-pod-v1" para checar a versão no ambiente.
+# Como usar: ". checkVersion.sh nome-do-pod-v1 ambiente" para checar a versão no ambiente.
 #
 # Exemplo: 
 # 	felipe_alencar@cloudshell:~$ . checkVersion.sh bscsix-read-simcard-data-v1 uat2
