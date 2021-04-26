@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $2 != "" ]; then
+if [ $2 != "" 2>/dev/null ]; then
     np=$2
 else
     read -r np<namespace.txt
