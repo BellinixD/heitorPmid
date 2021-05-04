@@ -12,35 +12,49 @@
 #             Autor: Felipe de Carvalho Alencar <felipe.alencar@engdb.com.br>
 #             Data: 08/12/2020
 #             Descrição: Primeira versão.
+#       Versão: 2.0
+#             Autor: Felipe de Carvalho Alencar <felipe.alencar@engdb.com.br>
+#             Data: 03/05/2020
+#             Descrição: Mudança para "case" e validação de entrada.
 #
-namespace=$1
-if [ $namespace == 'dev' ]
-then
-    gcloud config set project tim-pmid-dev
-    sleep 3's'   
-    gcloud config set compute/region southamerica-east1
-    sleep 3's'   
-    gcloud container clusters get-credentials pmid-dev --region=southamerica-east1
-    sleep 3's' 
- 
-elif [ $namespace == 'fqa' ]
-then
-    gcloud config set project tim-pmid-fqa
-    sleep 3's'                                                                                                 
-    gcloud config set compute/region southamerica-east1       
-    sleep 3's'                                                                                        
-    gcloud container clusters get-credentials tim-pmid-uat --region southamerica-east1 --project tim-pmid-fqa
-    sleep 3's' 
 
-elif [ $namespace == 'prd' ]
+if [ -z $1 ]
 then
-    gcloud config set project tim-pmid-prd 
-    sleep 3's' 
-    gcloud config set compute/region southamerica-east1   
-    sleep 3's'                                                                                            
-    gcloud container clusters get-credentials pmid-prod --region=southamerica-east1
-    sleep 3's' 
-else 
-    echo "Passe um dos ambientes válidos: fqa, prd ou dev"
+namespace=$1
+	#enquanto vazio o script pergunta qual deve ser passado até que o usuario passe algum
+        while [ -z $namespace ]
+        do
+                read -p "Voce esqueceu de colocar o namespace (fqa, prd ou dev): " namespace
+                letra_up=$(echo $namespace | awk '{ print toupper($1) }')
+        done
+else
+	#troca a entrada para letras maisculas
+        letra_up=$(echo $1 | awk '{ print toupper($1) }')
 fi
-echo ""
+
+case $letra_up in
+        DEV)
+        gcloud config set project tim-pmid-dev
+        gcloud config set compute/region southamerica-east1 
+        gcloud container clusters get-credentials pmid-dev --region=southamerica-east1
+        echo "Você entrou no ambiente DEV"
+        ;;
+
+        FQA)
+        gcloud config set project tim-pmid-fqa                                                                                              
+		gcloud config set compute/region southamerica-east1                                                                                           
+		gcloud container clusters get-credentials tim-pmid-uat --region southamerica-east1 --project tim-pmid-fqa
+		echo "Você entrou no ambiente FQA"
+        ;;
+
+        PRD)
+		gcloud config set project tim-pmid-prd 
+		gcloud config set compute/region southamerica-east1                                                                                              
+		gcloud container clusters get-credentials pmid-prod --region=southamerica-east1
+		echo "Você entrou no ambiente PRD"
+        ;;
+
+        *)
+        echo "Parametro invalido"
+        ;;
+esac
