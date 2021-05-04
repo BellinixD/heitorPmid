@@ -42,16 +42,16 @@ case $letra_up in
 
         FQA)
         gcloud config set project tim-pmid-fqa                                                                                              
-		gcloud config set compute/region southamerica-east1                                                                                           
-		gcloud container clusters get-credentials tim-pmid-uat --region southamerica-east1 --project tim-pmid-fqa
-		echo "Você entrou no ambiente FQA"
+	gcloud config set compute/region southamerica-east1                                                                                           
+	gcloud container clusters get-credentials tim-pmid-uat --region southamerica-east1 --project tim-pmid-fqa
+	echo "Você entrou no ambiente FQA"
         ;;
 
         PRD)
-		gcloud config set project tim-pmid-prd 
-		gcloud config set compute/region southamerica-east1                                                                                              
-		gcloud container clusters get-credentials pmid-prod --region=southamerica-east1
-		echo "Você entrou no ambiente PRD"
+	gcloud config set project tim-pmid-prd 
+	gcloud config set compute/region southamerica-east1                                                                                              
+	gcloud container clusters get-credentials pmid-prod --region=southamerica-east1
+	echo "Você entrou no ambiente PRD"
         ;;
 
         *)
