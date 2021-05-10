@@ -1,17 +1,23 @@
 #!/bin/bash
-#Histórico de versões:
 #
-#1.1 - Flavio Moreira
-#condição para o ambiente ser variável (caso não informe o ambiente será considerado o do namespace.txt)
+# tailPod.sh - possibilita acompanhar o log do pod informado em tempo real.
 #
-#1.0 - Heitor Bellini
+# Como usar: ". tailPod.sh nome-do-pod-v1-podId"
 #
-#tailPod possibilita acompanhar o log do pod informado em tempo real.
+# Exemplo:
+#             . tailPod.sh imdb-read-status-by-msisdn-v1-7f4db868c5-pbhmr
+#             . tailPod.sh imdb-read-status-by-msisdn-v1-7f4db868c5-pbhmr uat3
 #
-#Como usar:
-#. tailPod.sh u-billing-profile-info-v1-6cf54c8584-kzrmg
-#. tailPod.sh u-billing-profile-info-v1-6cf54c8584-kzrmg uat3
-#
+# Histórico de versões:
+#       Versão: 1.0
+#             Autor: Heitor Bellini <heitor.bellini@engdb.com.br>
+#             Data: 06/2020
+#             Descrição: Primeira versão.
+#       Versão: 1.1
+#             Autor: Flavio Moreira <flavio.moreira@engdb.com.br>
+#             Data: 04/2021
+#             Descrição: condição para o ambiente ser variável (caso não informe o ambiente será considerado o do namespace.txt)
+
 if [ $2 null ]
 then
     read -r np<namespace.txt
