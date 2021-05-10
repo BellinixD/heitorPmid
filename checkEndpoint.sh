@@ -7,8 +7,15 @@
 # Exemplo:
 #       felipe_alencar@cloudshell:~$ . checkEndpoint.sh u-billing-profile-info-v1 uat3
 #
-# Obs: Esse script retorna apenas o host e port do serviço. Alguns serviços podem não retornar o host e port.
-#
+# Histórico de versões:
+#       Versão: 1.0
+#             Autor: Felipe de Carvalho Alencar <felipe.alencar@engdb.com.br>
+#             Data: 01/2021
+#             Descrição: Primeira versão.
+#       Versão: 2.0
+#             Autor: Heitor Bellini <heitor.bellini@engdb.com.br>
+#             Data: 04/2021
+#             Descrição: Nome do pod não é mais case sensitive. Agora traz o apontamento de db adapters.
 
 if [ -z $2 ] 
 then
