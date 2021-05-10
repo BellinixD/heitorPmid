@@ -1,16 +1,23 @@
+
 #!/bin/bash
-#Histórico de versões:
 #
-#1.1 - Flavio Moreira
-#condição para o ambiente ser variável (caso não informe o ambiente será considerado o do <namespace.txt )
+# getPods.sh - recupera todos os pods que contém em seu nome o parâmetro informado na atual namespace.
 #
-#1.0 - Heitor Bellini
-#getPods recupera todos os pods que contém em seu nome o parâmetro informado na atual namespace.
+# Como usar: ". getPods.sh nome-do-pod"
 #
-#Como usar:
-#. getPods.sh u-billing-profile-info
-#. getPods.sh u-billing-profile-info uat2
+# Exemplo:
+#             . getPods.sh u-billing-prof
+#             . getPods.sh u-billing-profile-info uat2
 #
+# Histórico de versões:
+#       Versão: 1.0
+#             Autor: Heitor Bellini <heitor.bellini@engdb.com.br>
+#             Data: 06/2020
+#             Descrição: Primeira versão.
+#       Versão: 1.1
+#             Autor: Flavio Moreira <flavio.moreira@engdb.com.br>
+#             Data: 04/2021
+#             Descrição: condição para o ambiente ser variável (caso não informe o ambiente será considerado o do namespace.txt)
 
 if [ -z $2 ] 
 then
