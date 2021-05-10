@@ -15,7 +15,7 @@
 #             Descrição: Primeira versão.
 #       Versão: 1.1
 #             Autor: Flavio Moreira <flavio.moreira@engdb.com.br>
-#             Data: 06/2020
+#             Data: 04/2021
 #             Descrição: condição para o ambiente ser variável (caso não informe o ambiente será considerado o do namespace.txt)
 
 if [ -z $2 ] 
