@@ -1,16 +1,22 @@
 #!/bin/bash
-#Histórico de versões:
 #
-#1.1 - Flavio Moreira
-#condição para o ambiente ser variável (caso não informe o ambiente será considerado o do namespace.txt)
+# deletePod.sh - deleta o pod informado.
 #
-#1.0 - Heitor Bellini
+# Como usar: ". deletePod.sh nome-do-pod-v1-podId"
 #
-#deletePod deleta o pod informado.
+# Exemplo:
+#             . deletePod.sh u-billing-profile-info-v1-6cf54c8584-kzrmg
+#             . deletePod.sh u-billing-profile-info-v1-6cf54c8584-kzrmg uat2
 #
-#Como usar:
-#. deletePod.sh u-billing-profile-info-v1-6cf54c8584-kzrmg
-#. deletePod.sh u-billing-profile-info-v1-6cf54c8584-kzrmg uat2
+# Histórico de versões:
+#       Versão: 1.0
+#             Autor: Heitor Bellini <heitor.bellini@engdb.com.br>
+#             Data: 06/2020
+#             Descrição: Primeira versão.
+#       Versão: 1.1
+#             Autor: Flavio Moreira <flavio.moreira@engdb.com.br>
+#             Data: 06/2020
+#             Descrição: condição para o ambiente ser variável (caso não informe o ambiente será considerado o do namespace.txt)
 
 if [ -z $2 ] 
 then
