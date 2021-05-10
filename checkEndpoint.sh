@@ -15,7 +15,7 @@
 #       Versão: 2.0
 #             Autor: Heitor Bellini <heitor.bellini@engdb.com.br>
 #             Data: 04/2021
-#             Descrição: Nome do pod não é mais case sensitive. Agora traz o apontamento de db adapters.
+#             Descrição: Nome do pod não é mais case sensitive. Agora traz o apontamento de db adapters. Namespace referenciada ao namespace.txt.
 
 if [ -z $2 ] 
 then
