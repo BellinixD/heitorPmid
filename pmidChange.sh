@@ -1,4 +1,17 @@
 #!/bin/bash
+#
+# pmidChange.sh - retorna toda a árvore se serviços (e respectivas versões) do orquestrador informado
+#
+# Como usar: ". pmidChange.sh nome-do-orch-v1"
+#
+# Exemplo:
+#             . pmidChange.sh orch-r-access-information-v1
+#
+# Histórico de versões:
+#       Versão: 1.0
+#             Autor: Heitor Bellini <heitor.bellini@engdb.com.br>
+#             Data: 04/2020
+#             Descrição: Primeira versão.
 
 if [ $2 != "" 2>/dev/null ]; then
     np=$2
