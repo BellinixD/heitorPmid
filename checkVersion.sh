@@ -9,6 +9,11 @@
 #
 # Obs: Deve-se considerar apenas os 3 primeiros digitos, pois o ultimo digito é usado pela fabrica.
 #
+# Histórico de versões:
+#       Versão: 1.0
+#             Autor: Felipe de Carvalho Alencar <felipe.alencar@engdb.com.br>
+#             Data: 01/2021
+#             Descrição: Primeira versão.
 
 if [ -z $2 ] 
 then
