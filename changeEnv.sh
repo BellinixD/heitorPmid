@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# changeEnv - Muda o ambiente para fqa, dev ou prd.
+# changeEnv - Muda o cluster para fqa, dev ou prd.
 #
-# Como usar: ". changeEnv.sh ambiente" e aguarde para mudar de ambiente.
+# Como usar: ". changeEnv.sh ambiente" e aguarde para mudar de cluster.
 #
 # Exemplo:
 #		felipe_alencar@cloudshell:~$ . changeEnv.sh prd
@@ -37,21 +37,21 @@ case $letra_up in
         gcloud config set project tim-pmid-dev
         gcloud config set compute/region southamerica-east1 
         gcloud container clusters get-credentials pmid-dev --region=southamerica-east1
-        echo "Você entrou no ambiente DEV"
+        echo "Você entrou no cluster DEV"
         ;;
 
         FQA)
         gcloud config set project tim-pmid-fqa                                                                                              
 		gcloud config set compute/region southamerica-east1                                                                                           
 		gcloud container clusters get-credentials tim-pmid-uat --region southamerica-east1 --project tim-pmid-fqa
-		echo "Você entrou no ambiente FQA"
+		echo "Você entrou no cluster FQA"
         ;;
 
         PRD)
 		gcloud config set project tim-pmid-prd 
 		gcloud config set compute/region southamerica-east1                                                                                              
 		gcloud container clusters get-credentials pmid-prod --region=southamerica-east1
-		echo "Você entrou no ambiente PRD"
+		echo "Você entrou no cluster PRD"
         ;;
 
         *)
