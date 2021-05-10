@@ -1,4 +1,3 @@
-
 #!/bin/bash
 #
 # getPods.sh - recupera todos os pods que contém em seu nome o parâmetro informado na atual namespace.
