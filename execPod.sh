@@ -1,4 +1,3 @@
-
 #!/bin/bash
 #
 # execPod.sh - fornece acesso de root ao pod informado.
