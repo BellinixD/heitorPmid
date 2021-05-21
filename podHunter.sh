@@ -72,7 +72,6 @@ VerificaLockFile()
      then
         while read -r linha
         do
-          #echo "lendo o orch ${linha}"
            `timeout -k 5 5 kubectl -n $np logs -f $linha 2> /dev/null | grep -q $tid`
 		   	if [ $? -eq 0 ]
 			then 
